@@ -18,7 +18,7 @@ Template.activity.helpers({
     return this.userName.split(' ')[0];
   },
   recipeTitle: function() {
-    return RecipesData[this.recipeName].title;
+    return (RecipesData[this.recipeName])? RecipesData[this.recipeName].title : this.recipeName;
   },
   path: function() {
     return Router.path('recipe', { name: this.recipeName },

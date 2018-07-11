@@ -53,6 +53,9 @@ Meteor.startup(function () {
 });
 
 Template.appBody.onRendered(function() {
+
+  if (! Meteor.userId()) return Overlay.open('authOverlay');
+
   this.find("#content-container")._uihooks = {
     insertElement: function(node, next) {
       // short-circuit and just do it right away
@@ -126,7 +129,20 @@ Template.appBody.helpers({
   
   notifications: function() {
     return notifications.find();
+  },
+
+  activeUser: function() {
+    return Meteor.user();
   }
+});
+
+var myPostLogout = function(){
+  //example redirect after logout
+  Router.go('/home');
+};
+
+AccountsTemplates.configure({
+  onLogoutHook: myPostLogout
 });
 
 Template.appBody.events({
@@ -168,5 +184,9 @@ Template.appBody.events({
       this.callback();
       notifications.remove(this._id);
     }
+  },
+
+  'click .logout': function() {
+    AccountsTemplates.logout()
   }
 });

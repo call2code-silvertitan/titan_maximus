@@ -14,6 +14,9 @@ Template.authOverlay.onCreated(function() {
 Template.authOverlay.events({
   'click .js-signin': function() {
     //Meteor.loginWithTwitter({loginStyle: 'redirect'});
-    Meteor.loginWithPassword('user', 'pass')
+    Meteor.loginWithPassword('user', 'pass', function() {
+      Router.go('home');
+    })
+
   }
 });

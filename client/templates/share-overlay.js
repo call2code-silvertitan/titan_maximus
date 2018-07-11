@@ -12,11 +12,13 @@ Template.shareOverlay.helpers({
   },
   
   avatar: function() {
-    return Meteor.user().services.twitter.profile_image_url_https;
+    // return Meteor.user().services.twitter.profile_image_url_https;
+    return 'https://avatars3.githubusercontent.com/u/204768?v=2&s=400';
   },
   
   tweeting: function() {
-    return Session.get(TWEETING_KEY);
+    // return Session.get(TWEETING_KEY);
+    return false;
   }
 });
 
@@ -44,13 +46,13 @@ Template.shareOverlay.events({
     event.preventDefault();
     
     var text = $(event.target).find('[name=text]').val();
-    var tweet = Session.get(TWEETING_KEY);
+    // var tweet = Session.get(TWEETING_KEY);
     
     Meteor.call('createActivity', {
-      recipeName: self.name,
+      recipeName: 'change this to something', //self.name,
       text: text,
       image: Session.get(IMAGE_KEY)
-    }, tweet, Geolocation.currentLocation(), function(error, result) {
+    }, false, Geolocation.currentLocation(), function(error, result) {
       if (error) {
         alert(error.reason);
       } else {
@@ -58,8 +60,8 @@ Template.shareOverlay.events({
           action: 'View',
           title: 'Your photo was shared.',
           callback: function() {
-            Router.go('recipe', { name: self.name }, 
-              { query: { activityId: result } });
+            //Router.go('recipe', { name: self.name }, 
+            //  { query: { activityId: result } });
 
             Template.recipe.setTab('feed');
           }

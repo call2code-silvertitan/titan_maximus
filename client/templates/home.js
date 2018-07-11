@@ -20,3 +20,9 @@ Template.home.helpers({
     return News.latest();
   }
 });
+
+Template.home.events({
+  'click .js-share': function() {
+    Overlay.open('shareOverlay', this);
+  }
+});

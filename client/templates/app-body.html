@@ -28,7 +28,7 @@
       <a href="{{pathFor 'feed'}}" class="{{activePage 'feed'}}">
         <span class="wrapper-menu-item">
           <span class="icon-rss"></span>
-          <span class="title-menu">What's<br>Cooking</span>
+          <span class="title-menu">Your Searches</span>
         </span>
       </a>
       <a href="{{pathFor 'recipes'}}" class="{{activePage 'recipes' 'recipe'}}">
@@ -49,6 +49,14 @@
           <span class="title-menu">About</span>
         </span>
       </a>
+      {{#if activeUser}}
+        <a href="" class="{{activePage 'about'}}">
+          <span class="wrapper-menu-item">
+            <span class="icon-question"></span>
+            <span class="title-menu logout">Logout</span>
+          </span>
+        </a>
+      {{/if}}
     </section>
 
       <div class="notifications">

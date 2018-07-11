@@ -59,8 +59,8 @@ Template.recipe.events({
   'click .js-add-bookmark': function(event) {
     event.preventDefault();
 
-    if (! Meteor.userId())
-      return Overlay.open('authOverlay');
+    //if (! Meteor.userId())
+    //  return Overlay.open('authOverlay');
     
     Meteor.call('bookmarkRecipe', this.name);
   },
