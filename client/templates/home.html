@@ -4,17 +4,15 @@
     {{>nav title='Local Market' black=true}}
 
     <div class="content-scrollable">
-      <div class="bg-image home" style="height: 150px;background-image: NONE;">
-        <h1 class="title-home">
-         title & logo
-        </h1>
+      <div class="bg-image home" style="height: 60px;">
+        <h1 class="title-home" style="color:white;top: 25px;font-weight: bold;">Silver Titan</h1>
         <span class="arrow"></span>
       </div>
 
-      <!-- div class="callout-news">
+      <div class="callout-news">
         <span class="title-callout">News</span>
         {{latestNews.text}}
-      </div -->
+      </div>
 
       <h2 class="list-title">Activites</h2>
       <div class="list-activities">
@@ -27,7 +25,7 @@
           </div>
         {{/each}}
       </div>
-      <a href="{{pathFor 'feed'}}" class="btn-primary">Alerts</a>
+      <a href="{{pathFor 'feed'}}" class="btn-primary">Searches</a>
 
       <!-- h2 class="list-title">Our Favorite Recipes</h2>
       <div class="list-subtitle">Hand-picked by neighborhood chefs</div>
@@ -36,7 +34,7 @@
           {{> recipeItem recipe=this size='small'}}
         {{/each}}
       </div -->
-      <a class="btn-tertiary js-share"><span class="icon-camera"></span> Share that you made this</a>
+      <a class="btn-tertiary js-share"><span class="icon-camera"></span>Create new search</a>
 
       <!-- a href="{{pathFor 'recipes'}}" class="btn-primary">Explore all our recipes</a -->
     </div>

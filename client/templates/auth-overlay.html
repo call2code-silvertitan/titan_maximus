@@ -1,14 +1,9 @@
 <template name="authOverlay">
   <div class="overlay auth">
-    <a href="#" class="js-close-overlay overlay-dismiss"><span class="icon-cross"></span></a>
+    <!-- a href="#" class="js-close-overlay overlay-dismiss"><span class="icon-cross"></span></a -->
 
-    <div class="wrapper-heading">
-      <div class="title-overlay">Sign In</div>
-      <div class="subtitle-overlay">To bookmark and share your favorite recipes</div>
+    <div class="wrapper-heading" style="width: 100%;"> 
+      {{> atForm}}
     </div>
-
-    <button class="js-signin btn-twitter">Sign In</button>
-    {{> atForm}}
-
   </div>
 </template>
