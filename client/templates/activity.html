@@ -13,12 +13,14 @@
     </span>
 
     <div class="bg-image" style="background-image: url('{{image}}');"></div>
-    <div>
-        <img src="/img/activity/pin-animate.gif"  style="height:90px;float:left"> <a style="font-size: 2em; line-height: 87px;">Item Located!</a>
+    {{#if located}}
+      <div>
+        <img src="/img/activity/pin-animate.gif"  style="height:90px;float:left"> <a style="font-size: 2em; line-height: 87px;"> Located!</a>
         <div class="map-container" >
           {{> googleMap name="exampleMap" options=exampleMapOptions}}
         </div>
-    </div>
+      </div>
+    {{/if}}
 
   </a>
 </template>

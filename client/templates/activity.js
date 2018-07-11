@@ -14,6 +14,8 @@ Template.activity.onRendered(function() {
   GoogleMaps.load();
 });
 
+var hasLocated = false;
+
 Template.activity.helpers({
   firstName: function() {
     return this.userName.split(' ')[0];
@@ -34,7 +36,12 @@ Template.activity.helpers({
         zoom: 8
       };
     }
-  }
+  },
+  located: function() {
+    return Meteor.setInterval(function(){
+      return true;
+    }, 30000);
+  },
 });
 
 Template.activity.onCreated(function() {
