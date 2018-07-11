@@ -46,11 +46,12 @@ Template.shareOverlay.events({
     event.preventDefault();
     
     var text = $(event.target).find('[name=text]').val();
+    var recipeName = $(event.target).find('[name=recipeName]').val();
     // var tweet = Session.get(TWEETING_KEY);
     
     Meteor.call('createActivity', {
-      recipeName: 'change this to something', //self.name,
-      text: text,
+      recipeName, //self.name,
+      text,
       image: Session.get(IMAGE_KEY)
     }, false, Geolocation.currentLocation(), function(error, result) {
       if (error) {

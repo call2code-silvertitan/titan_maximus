@@ -14,18 +14,18 @@
         {{latestNews.text}}
       </div>
 
-      <h2 class="list-title">Activites</h2>
+      <h2 class="list-title">Latest Search</h2>
       <div class="list-activities">
         {{#each activities}}
           {{> activity}}
         {{else}}
-          <div class="wrapper-message">
+          <!-- div class="wrapper-message">
             <div class="title-message">No one is cooking yet!</div>
             <div class="subtitle-message">Share that you made a recipe and it will show up here.</div>
-          </div>
+          </div -->
         {{/each}}
       </div>
-      <a href="{{pathFor 'feed'}}" class="btn-primary">Searches</a>
+      <a href="{{pathFor 'feed'}}" class="btn-primary" style="background-color: #46c8f5;">My Searches</a>
 
       <!-- h2 class="list-title">Our Favorite Recipes</h2>
       <div class="list-subtitle">Hand-picked by neighborhood chefs</div>
@@ -34,9 +34,9 @@
           {{> recipeItem recipe=this size='small'}}
         {{/each}}
       </div -->
-      <a class="btn-tertiary js-share"><span class="icon-camera"></span>Create new search</a>
+      <a class="btn-tertiary js-share" style="margin-top: 20px;width: 100%;"><span class="icon-camera"></span>Create new search</a>
 
-      <!-- a href="{{pathFor 'recipes'}}" class="btn-primary">Explore all our recipes</a -->
+      <!-- a href="{{pathFor 'recipes'}}" class="btn-primary" >Explore all our recipes</a -->
     </div>
 
   </div>
