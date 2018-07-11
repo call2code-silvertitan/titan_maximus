@@ -19,6 +19,7 @@ Template.admin.events({
   },
   
   'click .login': function() {
-    Meteor.loginWithTwitter();
+    //Meteor.loginWithTwitter();
+    Meteor.loginWithPassword('user', 'pass')
   }
 })
