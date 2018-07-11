@@ -1,7 +1,7 @@
-<template name="recipe">
+<template name="search">
 
   <div class="page recipe {{activeTabClass}}">
-    {{#nav title='Recipe' black=true back=true}}
+    {{#nav title='Search' black=true back=true}}
       {{#if bookmarked}}
         <a href="#" class="nav-item js-remove-bookmark bookmarked"><span class="icon-bookmark"></span></a>
       {{else}}
@@ -21,45 +21,26 @@
       </div>
 
       <div class="btns-group">
-        <a class="btn-secondary {{#if isActiveTab 'make'}}active{{/if}} {{#if isActiveTab 'recipe'}}no-state{{/if}} js-show-recipe">Make It</a>
+        <a class="btn-secondary {{#if isActiveTab 'make'}}active{{/if}} {{#if isActiveTab 'recipe'}}no-state{{/if}} js-show-recipe">Locate It</a>
         <a class="btn-secondary {{#if isActiveTab 'feed'}}active{{/if}} {{#if isActiveTab 'recipe'}}no-state{{/if}} js-show-feed">Pictures</a>
       </div>
     </div>
 
 
     <div class="content-scrollable static-nav make-scrollable">
-      <a class="btn-tertiary js-share"><span class="icon-camera"></span> Share that you made this</a>
+      <a class="btn-tertiary js-share"><span class="icon-camera"></span> Create a new search</a>
 
-      <h2 class="list-title">Ingredients</h2>
-      <ul class="list-ingredients">
-        {{#each ingredients}}
-          <li class="item-ingredient">{{this}}</li>
-        {{/each}}
-      </ul>
-
-      <h2 class="list-title">Directions</h2>
-      <ol class="list-directions">
-        {{#each directions}}
-          <li class="item-direction">
-            <span class="text">{{this}}</span>
-          </li>
-        {{/each}}
-          <li class="item-direction">
-          ...
-          </li>
-      </ol>
-      <a href="{{source.url}}" target="_blank" class="btn-primary js-open">See full recipe on {{source.name}}</a>
     </div>
 
     <div class="content-scrollable static-nav feed-scrollable">
-      <a class="btn-tertiary js-share"><span class="icon-camera"></span> Share that you made this</a>
+      <a class="btn-tertiary js-share"><span class="icon-camera"></span>  Create a new search</a>
       <div class="list-activities">
         {{#each activities}}
           {{> activity}}
         {{else}}
           <div class="wrapper-message">
             <div class="title-message">No feed activity yet</div>
-            <div class="subtitle-message">Be the first to share that you made this recipe. <a class="js-share">Share now</a></div>
+            <!-- div class="subtitle-message">Be the first to share that you made this recipe. <a class="js-share">Share now</a></div -->
           </div>
         {{/each}}
       </div>

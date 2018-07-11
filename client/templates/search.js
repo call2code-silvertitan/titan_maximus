@@ -1,17 +1,17 @@
 var TAB_KEY = 'recipeShowTab';
 
-Template.recipe.onCreated(function() {
+Template.search.onCreated(function() {
   if (Router.current().params.activityId)
-    Template.recipe.setTab('feed');
+    Template.search.setTab('feed');
   else
-    Template.recipe.setTab('recipe');
+    Template.search.setTab('recipe');
 });
 
-Template.recipe.onRendered(function () {
+Template.search.onRendered(function () {
   this.$('.recipe').touchwipe({
     wipeDown: function () {
       if (Session.equals(TAB_KEY, 'recipe'))
-        Template.recipe.setTab('make')
+        Template.search.setTab('make')
     },
     preventDefaultEvents: false
   });
@@ -29,7 +29,7 @@ Template.recipe.onRendered(function () {
 //   so we need to help the transition out by attaching another
 //   class that indicates if the feed tab should slide out of the
 //   way smoothly, right away, or after the transition is over
-Template.recipe.setTab = function(tab) {
+Template.search.setTab = function(tab) {
   var lastTab = Session.get(TAB_KEY);
   Session.set(TAB_KEY, tab);
   
@@ -40,7 +40,7 @@ Template.recipe.setTab = function(tab) {
   $('.feed-scrollable').toggleClass('delayed', toRecipe);
 }
 
-Template.recipe.helpers({
+Template.search.helpers({
   isActiveTab: function(name) {
     return Session.equals(TAB_KEY, name);
   },
@@ -55,7 +55,7 @@ Template.recipe.helpers({
   }
 });
 
-Template.recipe.events({
+Template.search.events({
   'click .js-add-bookmark': function(event) {
     event.preventDefault();
 
